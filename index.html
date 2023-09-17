@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Cumpleaños</title>
+</head>
+<body>
+    <div class="container container1" >
+        <center>
+            <h1>¡Feliz Cumpleaños!</h1>
+
+            <h6>Fecha</h6>
+            <div class="image">
+                <img src="" alt="">
+
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <a class="whatsapp-boton" href="whatsapp://send?phone=+525582278785&text=¡Confirmo%20asistencia!">CONFIRMAR ASISTENCIA</a>
+
+        </center>
+    </div>
+    <div class="container container2">
+        
+    </div>
+    <div class="container container3">
+        
+    </div>
+    <div class="container container4">
+        
+    </div>
+    <div class="container container5">
+        
+    </div>
+    <script>
+        let currentContainer = 1;
+
+        window.addEventListener("wheel", (e) => {
+            if (e.deltaY > 0) {
+                currentContainer++;
+            } else {
+                currentContainer--;
+            }
+
+            if (currentContainer < 1) {
+                currentContainer = 1;
+            } else if (currentContainer > 5) {
+                currentContainer = 5;
+            }
+
+            scrollToContainer(currentContainer);
+        });
+
+        function scrollToContainer(containerNumber) {
+            const container = document.querySelector(`.container${containerNumber}`);
+            if (container) {
+                container.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    </script>
+</body>
+</html>
